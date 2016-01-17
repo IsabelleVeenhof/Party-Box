@@ -1,0 +1,51 @@
+Hier leg ik uit hoe je het in elkaar kan zetten van de Party Box.
+
+Stap 1:
+<img src="http://cubeupload.com/im/lokisbandana/IMG1670.jpg">
+Zet de RGB ledlampjes in het breadboard op j1,2,3,4 waarvan het langere pootje van het lampje in 3 zit en op j27,28,29 waarvan het 
+langere pootje in 27 zit.
+
+Zet vervolgens de weerstandjes in f1,2,4 en f27,28,30.
+
+Zet daarna 2 rode jumper wires in a1 die leidt naar Pin5 en in a27 die leidt naar Pin 11 op de Arduino.
+Zet daarna 2 groene jumper wires in a2 die leidt naar Pin6 en in a28 die leidt naar Pin 12 op de Arduino.
+Zet daarna 2 blauwe jumper wires in a4 die leidt naar Pin7 en in a30 die leidt naar Pin 13 op de Arduino.
+
+Daarna zet je in de Arduino in de 5v pin een rode jumper wire die je bij de bovenste + die zo dicht mogelijk bij a1 breadboard zit in en 
+een zwarte jumper wire in de gnd naast de 5v op de Arduino die leidt naar de - zo dicht mogelijk bij de a1 op de breadboard. 
+Dit zorgt ervoor dat je stroom hebt op daarop zodat je daar straks de ledlapmjes en aanrakingssensoren in kan steken.
+
+Nu steek je in i3 en i28 rode jumper wires die leiden naar de + pinnen zodat je stroom hebt voor je ledlampjes.
+
+Stap 2:
+<img src="http://cubeupload.com/im/lokisbandana/IMG1668.jpg">
+
+Bij deze stap steken we de aanrakingssensoren in de Arduino en breadboard. 
+Maar eerst neem je 3 jumper wires per sensor en soldeer je deze vast aan de 3 pinnetjes op de sensor zelf. Zorg ervoor dat je dit goed 
+doet en het koperdraad vertint voordat je gaat solderen zodat je zeker weet dat het koper van de verschillende draden elkaar niet zal 
+raken. Anders dan is er kans dat de lampjes niet goed op de sensoren zullen reageren en blijven branden. 
+
+Nadat je dat hebt gedaan steek je de draadjes dat je aan de sig hebt gesoldeerd op je aanraksingssensoren in Pin1 en Pin3 op de Arduino
+steekt. Dan steek je de draadjes aan de vcc in het + balkje op de breadboard en de draadjes aan gnd in het - balkje op de breadboard.
+
+Stap 3:
+
+Ikzelf had mazzel dat ik een kartonnen doosje had gevonden waarvan ik met een mesje de zijdes kon uitsnijden, maar ik kan me voorstellen
+dat niet iedereen zo'n doosje heeft liggen of makkelijk kan aankomen. Daarom heb ik een template toegevoegd voor een papieren kubus.
+Zorg ervoor dat de vierkanten 11x11 zijn en je 1 centimeter rand hebt. Als de template niet op het papier past kan je deze ook makkelijk
+in het midden doorknippen maar dan moet je wel weer meer randjes toevoegen. Denk eraan om een gat te maken in 1 van de zijdes waar het
+kabeltje voor de powerbank doorheen kan.
+<img src="http://u.cubeupload.com/lokisbandana/cubetemplate.jpg">
+
+Stap 4: 
+<img src="http://u.cubeupload.com/lokisbandana/IMG1667.jpg">
+
+Doe de Arduino en breadboard voorzichtig in je doosje en plak de aanrakingssensoren voorzichtig aan 2 zijdes met plakband. 
+Steek de micro usb kabel van de powerbank door het gaatje dat je hebt gemaakt heen en steek deze in z'n uitgang.
+
+<img src="http://u.cubeupload.com/lokisbandana/IMG1666.jpg">
+Maak het doosje dicht.
+
+<img src="http://u.cubeupload.com/lokisbandana/IMG1665.jpg">
+Tada, je Party Box is klaar en nu kan je spelen met de aanrakingssensoren.
+Ik zou hem zeker op feestjes neerzetten voor je vrienden.
