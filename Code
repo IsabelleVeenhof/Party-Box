@@ -1,0 +1,68 @@
+Hier geef ik de code voor de Party Box en leg ik deze uit.
+
+/*Hier geef je de pins die je gaat gebruiken van je Arduino een naam zodat je ze kan aanroepen en geef je aan hoe fel je wilt dat de ledlampjes gaan branden.*/
+int redPin = 11;
+int greenPin = 12;
+int bluePin = 13;
+int roodPin = 5;
+int groenPin = 6;
+int blauwPin = 7;
+
+#define COMMON_ANODE
+#define popPin 1
+#define lolPin 3
+#define brightness 255
+
+/*Bij de setup geef je aan waarop wordt gereageerd en wat de reactie daarop is*/
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
+  pinMode(roodPin, OUTPUT);
+  pinMode(groenPin, OUTPUT);
+  pinMode(blauwPin, OUTPUT);
+  pinMode(lolPin, INPUT);
+  pinMode(popPin, INPUT);
+}
+
+/*Hier zet je neer wat er gebeurd als de aanrakingssensoren worden aangeraakt. In dit geval zullen de kleuren op willekeurige wijze veranderen door de random functie en zit er een willekeurige pauze tussen. Ook zet je in dit stukje neer dat als de aanrakingssensoren niet worden aangeraakt de ledlampjes uitblijven.*/
+void loop()
+{
+  int popValue = digitalRead(popPin);
+  if (popValue == HIGH){
+    setColor(random(0, 100), random(0, 255), random(0, 100)); 
+    delay (random(50,500));
+    Serial.println("TOUCHED");
+  }
+  else{
+        setColor(0, 0, 0);
+    Serial.println("not touched"); 
+  }
+  int lolValue = digitalRead(lolPin);
+  if (lolValue == HIGH){
+    setColor(random(0, 100), random(0, 100), random(0, 255)); 
+    delay (random(0,1000));
+    Serial.println("TOUCHED");
+  }
+  else{
+        setColor(0, 0, 0);
+    Serial.println("not touched"); 
+  }
+}
+
+/*Hier geef je aan wat voor kleuren de ledlampjes zijn aangezien het rgb lampjes zijn moet je ze ook als 3 verschillende ledlampjes behandelen. En aangezien we 2 ledlampjes hebben moeten we ze ook 2 keer benoemen, vandaar de nederlandse en engelse versie. */
+void setColor(int red, int green, int blue)
+{
+  #ifdef COMMON_ANODE
+    red = 255 - red;
+    green = 255 - green;
+    blue = 255 - blue;
+  #endif
+  analogWrite(redPin, red);
+  analogWrite(greenPin, green);
+  analogWrite(bluePin, blue); 
+  analogWrite(roodPin, red);
+  analogWrite(groenPin, green);
+  analogWrite(blauwPin, blue);
